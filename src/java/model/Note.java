@@ -1,5 +1,6 @@
 /*
  * Copyright 2015 Len Payne <len.payne@lambtoncollege.ca>.
+ * Updated 2015 Mark Russell <mark.russell@lambtoncollege.ca>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,38 +20,42 @@ package model;
 import javax.enterprise.context.ApplicationScoped;
 
 /**
- * Stores an account balance and provides some basic methods to manipulate the balance
+ * Stores a note and provides some basic methods to manipulate the note
  */
 @ApplicationScoped
-public class Account {
+public class Note {
+    private String words ;
     /**
-     * Returns the current total balance of the account
-     * @return - the balance
+     * Returns the current note
+     * @return - the note
      */
-    public double getBalance() {
-        return -999;
+    
+    public String getNote() {
+        return this.words;
     }
     
     /**
-     * Adds an amount of cash to the total balance of the account
-     * @param cash - the cash to deposit
+     * Adds text to the note
+     * @param words - the text to add
      */
-    public void deposit(double cash) {
-        
+    public void setNote(String words) {
+        this.words=words;
     }
     
     /**
-     * Deducts an amount of cash from the total balance of the account
-     * @param cash - the cash to withdraw
+     * Removes text from the note
+     * @param words - the text to remove
      */
-    public void withdraw(double cash) {
+    public void addNote(String words) {
+    this.words= this.words.concat(words);
     
     }
     
     /**
-     * Deducts all cash from the total balance of the account
+     * Removes all text from the note
      */
-    public void close() {
-        
+    public void clear() {
+             this.words="";
+                     
     }
 }

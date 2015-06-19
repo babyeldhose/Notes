@@ -1,5 +1,6 @@
 /* 
  * Copyright 2015 Len Payne <len.payne@lambtoncollege.ca>.
+ * Updated 2015 Mark Russell <mark.russell@lambtoncollege.ca>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,36 +15,36 @@
  * limitations under the License.
  */
 
-function refreshBalance() {
+function refreshContent() {
     $.ajax({
-       url: 'account',
+       url: 'note',
        method: 'GET',                   
        success: function(data) {
-           $('#balance').text(data);
+           $('#content').text(data);
        }
     });
 }
-function withdraw() {
+function addNote() {
     $.ajax({
-       url: 'account',
+       url: 'note',
        method: 'POST',
-       data: { 'withdraw' : $('#withdraw').val()},
-       success: refreshBalance
+       data: { 'addNote' : $('#addNote').val()},
+       success: refreshContent
     });
 }
-function deposit() {
+function setNote() {
     $.ajax({
-       url: 'account',
+       url: 'note',
        method: 'POST',
-       data: { 'deposit' : $('#deposit').val()},
-       success: refreshBalance
+       data: { 'setNote' : $('#setNote').val()},
+       success: refreshContent
     });
 }
-function closeAccount() {
+function clearNote() {
     $.ajax({
-       url: 'account',
+       url: 'note',
        method: 'POST',
-       data: { 'close' : true },
-       success: refreshBalance
+       data: { 'clear' : true },
+       success: refreshContent
     });
 }

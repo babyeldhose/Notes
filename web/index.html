@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <!--
 Copyright 2015 Len Payne <len.payne@lambtoncollege.ca>.
+Updated 2015 Mark Russell <mark.russell@lambtoncollege.ca>.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -16,18 +17,19 @@ limitations under the License.
 -->
 <html>
     <head>
-        <title>CPD-4414-01 Midterm</title>
+        <title>CPD-4414-01 Midterm Practice</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-        <script src="account.js"></script>
+        <script src="js/note.js"></script>
    </head>
     <body>
         <section>
-            <p>Account Balance: $<span id="balance"></span> <button onclick="refreshBalance()">Refresh</button></p>
-            <p>Withdraw: <input id="withdraw" /> <button onclick="withdraw()">Withdraw</button></p>
-            <p>Deposit: <input id="deposit" /> <button onclick="deposit()">Deposit</button></p>
-            <p>Close Account: <button onclick="closeAccount()">Close Account</button></p>
+            <p>Note Contents: <span id="balance"></span> <button onclick="refreshContent()">Note Content</button></p>
+            <p>Add to Note: <input id="addNote" /> <button onclick="addNote()">Add to Note</button></p>
+            <p>Set the Note: <input id="setNote" /> <button onclick="setNote()">Set the Note</button></p>
+            <p>Clear Note: <button onclick="clearNote()">Clear Note</button></p>
+            <div id="content"></div>
         </section>
     </body>
 </html>
